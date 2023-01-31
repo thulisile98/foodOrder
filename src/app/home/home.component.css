@@ -15,5 +15,12 @@ border-radius: 1rem;
 margin: 0.5rem;
 display: flex;
 flex-direction: column;
+overflow: hidden;
+color: #e72929;
+}
+
+li a:hover{
+    opacity: 0.9;
+    cursor: pointer;
 
 }
