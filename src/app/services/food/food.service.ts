@@ -18,6 +18,17 @@ export class FoodService {
       '/assets/food-7.jpg',
       '/assets/food-8.jpg',
       '/assets/food-9.jpg',
+      '/assets/food-10.jpg',
+      '/assets/food-11.jpg',
+      '/assets/food-12.jpg',
+      '/assets/food-13.jpg',
+      '/assets/food-14.jpg',
+      '/assets/food-15.jpg',
+      '/assets/food-16.jpg',
+      '/assets/food-17.png',
+      '/assets/food-18.jpg',
+      '/assets/food-19.jpg',
+      '/assets/food-20.jpg',
     ]
   }
 }
