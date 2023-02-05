@@ -8,7 +8,7 @@ ul{
 }
 
 ul li a{
-height: 20rem;
+height: 25rem;
 width: 20rem;
 border: 1px solid whitesmoke;
 border-radius: 1rem;
@@ -17,6 +17,18 @@ display: flex;
 flex-direction: column;
 overflow: hidden;
 color: #e72929;
+}
+.star{
+    margin-bottom: .2rem;
+}
+.favourite.not{
+    color: black;
+}
+
+.product-item-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 li a:hover{

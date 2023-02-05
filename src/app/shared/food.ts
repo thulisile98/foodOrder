@@ -8,7 +8,7 @@ export class Foods {
     tags?: string[];
     imageUrl!: string;
     cookTime!: string;
-    original!: string[];
+    description!: string[];
 
 
 }

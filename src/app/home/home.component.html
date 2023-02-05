@@ -7,10 +7,18 @@
         <div class="name">
             {{food.name}}
         </div>
-        <span class="favourite {{food.favourite?'':'not'}}">
-              ♥
-        </span>
-       
+        <span class="favourite {{food.favourite?'':'not'}}">♥</span>
+       <star-rating [value]="food.star" [totalstars]="5" 
+       checkedcolor="red"
+       uncheckedcolor="black"
+       size="24px"[readonly]="true"></star-rating>
+     <div class="cooktime">🕐
+         {{food.cookTime}}
+        Mins
+     </div>
+     <div class="price">
+         {{food.price |currency:'EUR':true}}
+     </div>
     </div>
      </a>
     </li>

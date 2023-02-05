@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RatingModule } from 'ng-starrating/lib/rating.module';
+import { RatingModule } from 'ng-starrating';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +19,7 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // RatingModule,
+    RatingModule,
 
   ],
   providers: [],
