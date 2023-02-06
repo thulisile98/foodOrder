@@ -1,3 +1,5 @@
+
+<app-search></app-search>
 <ul>
     <li *ngFor="let food of foods">
         <a>
@@ -12,6 +14,9 @@
        checkedcolor="red"
        uncheckedcolor="black"
        size="24px"[readonly]="true"></star-rating>
+       <div class="description">
+         {{food.description}}
+     </div>
      <div class="cooktime">🕐
          {{food.cookTime}}
         Mins

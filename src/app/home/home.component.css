@@ -8,7 +8,7 @@ ul{
 }
 
 ul li a{
-height: 25rem;
+height: 26rem;
 width: 20rem;
 border: 1px solid whitesmoke;
 border-radius: 1rem;
@@ -35,4 +35,20 @@ li a:hover{
     opacity: 0.9;
     cursor: pointer;
 
+}
+.name{
+    size: 10px;
+    font-size: large;
+    font-weight: bold;
+}
+.description{
+    color: rgb(85, 83, 83);
+}
+.cooktime{
+     color: rgb(85, 83, 83);
+}
+.price{
+   
+       font-size: larger;
+       font-weight: bolder;
 }
