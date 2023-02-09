@@ -11,8 +11,8 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'app-search',
-    component: SearchComponent,
+    path: 'search/:searchItem',
+    component: HomeComponent,
   }
 ];
 
