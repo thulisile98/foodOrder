@@ -7,6 +7,10 @@ import { Foods } from 'src/app/shared/food';
 export class FoodService {
 
   constructor() { }
+  getAllFoodByTag(tag: string): Foods[] {
+    return tag == 'All' ?
+      this.getAll() : this.getAll().filter(food => food.tags?.includes(tag));
+  }
 
   getAll(): Foods[] {
     return [
@@ -138,7 +142,7 @@ export class FoodService {
         name: 'salad',
         favourite: false,
         star: 3,
-        tags: ['FastFood', 'salad'],
+        tags: ['salad'],
         imageUrl: '/assets/food-12.jpg',
         cookTime: '15-50',
         description: ['Spain'],
@@ -149,7 +153,7 @@ export class FoodService {
         name: 'mashroom ald',
         favourite: false,
         star: 4,
-        tags: ['FastFood', 'salad'],
+        tags: ['salad'],
         imageUrl: '/assets/food-13.jpg',
         cookTime: '15-30',
         description: ['Italy'],
@@ -171,7 +175,7 @@ export class FoodService {
         name: 'fruit Salad',
         favourite: false,
         star: 2,
-        tags: ['FastFood', 'fruits'],
+        tags: ['fruits'],
         imageUrl: '/assets/food-15.jpg',
         cookTime: '5-15',
         description: ['South-Africa'],
@@ -182,7 +186,7 @@ export class FoodService {
         name: 'burgerchips',
         favourite: false,
         star: 2,
-        tags: ['FastFood', 'burger', 'chips'],
+        tags: ['burger', 'chips'],
         imageUrl: '/assets/food-16.jpg',
         cookTime: '5',
         description: ['South-Africa'],
@@ -215,7 +219,7 @@ export class FoodService {
         name: 'salad wraps',
         favourite: true,
         star: 1,
-        tags: ['FastFood', 'wrap'],
+        tags: ['wrap'],
         imageUrl: '/assets/food-19.jpg',
         cookTime: '30-45',
         description: ['Spain'],
@@ -226,7 +230,7 @@ export class FoodService {
         name: 'chicken & masshroom pizza',
         favourite: true,
         star: 3,
-        tags: ['FastFood', 'pizza'],
+        tags: ['pizza'],
         imageUrl: '/assets/food-20.jpg',
         cookTime: '15-30',
         description: ['South-Africa'],
