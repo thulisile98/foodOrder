@@ -11,18 +11,17 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   foods: Foods[] = [];
-  constructor(private fs: FoodService, private router: ActivatedRoute) {
+  constructor(private fs: FoodService, private route: ActivatedRoute) {
 
   }
-  ngOnInit() {
-    this.router.params.subscribe(params => {
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
       if (params['searchItem'])
-        this.foods = this.fs.getAll().filter(food => food.name.toLowerCase())
+        this.foods = this.fs.getAll().filter(food => food.name.toLowerCase().includes(params['searchItem'].toLowerCase()));
       else
         this.foods = this.fs.getAll();
 
     })
-    this.foods = this.fs.getAll();
 
   }
 }
