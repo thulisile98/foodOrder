@@ -8,7 +8,7 @@ export class FoodService {
 
   constructor() { }
   getAllFoodByTag(tag: string): Foods[] {
-    return tag == 'All' ?
+    return tag == "All" ?
       this.getAll() : this.getAll().filter(food => food.tags?.includes(tag));
   }
 
@@ -31,7 +31,7 @@ export class FoodService {
         name: 'beacon pizza',
         favourite: false,
         star: 2,
-        tags: ['FastFood', 'Pizza'],
+        tags: ['FastFood', 'pizza'],
         imageUrl: '/assets/food-2.jpg',
         cookTime: '15-50',
         description: ['tomato pizza with onion rings'],
@@ -42,7 +42,7 @@ export class FoodService {
         name: 'tomato & berry pizza',
         favourite: false,
         star: 4.5,
-        tags: ['FastFood', 'pzza'],
+        tags: ['FastFood', 'pizza'],
         imageUrl: '/assets/food-3.jpg',
         cookTime: '15-30',
         description: ['spicy pizza with full tomatoes'],
