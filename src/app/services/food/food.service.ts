@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Foods } from 'src/app/shared/food';
+import { Tag } from 'src/app/shared/models/Tag';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,19 @@ export class FoodService {
     return tag == "All" ?
       this.getAll() : this.getAll().filter(food => food.tags?.includes(tag));
   }
+  getAllTag(): Tag[] {
+    return [
+      { name: 'All', count: 20 },
+      { name: 'fastfood', count: 10 },
+      { name: 'pizza', count: 3 },
+      { name: 'fish & chips', count: 3 },
+      { name: 'burger', count: 4 },
+      { name: 'wings', count: 2 },
+      { name: 'drinks', count: 1 },
+      { name: 'salad', count: 3 },
+    ]
+
+  }
 
   getAll(): Foods[] {
     return [
@@ -20,7 +34,7 @@ export class FoodService {
         name: 'wings& salad',
         favourite: true,
         star: 3.5,
-        tags: ['FastFood', 'Wings'],
+        tags: ['fastfood', 'wings'],
         imageUrl: '/assets/food-1.jpg',
         cookTime: '10-20',
         description: ['famous Italian wings'],
@@ -31,7 +45,7 @@ export class FoodService {
         name: 'beacon pizza',
         favourite: false,
         star: 2,
-        tags: ['FastFood', 'pizza'],
+        tags: ['fastfood', 'pizza'],
         imageUrl: '/assets/food-2.jpg',
         cookTime: '15-50',
         description: ['tomato pizza with onion rings'],
@@ -42,7 +56,7 @@ export class FoodService {
         name: 'tomato & berry pizza',
         favourite: false,
         star: 4.5,
-        tags: ['FastFood', 'pizza'],
+        tags: ['fastfood', 'pizza'],
         imageUrl: '/assets/food-3.jpg',
         cookTime: '15-30',
         description: ['spicy pizza with full tomatoes'],
@@ -53,7 +67,7 @@ export class FoodService {
         name: 'wings',
         favourite: true,
         star: 5,
-        tags: ['FastFood', 'Wings'],
+        tags: ['fastfood', 'Wings'],
         imageUrl: '/assets/food-4.jpg',
         cookTime: '10-20',
         description: ['ducked in hot sauce South-African wings'],
@@ -64,7 +78,7 @@ export class FoodService {
         name: 'stick Salad',
         favourite: false,
         star: 3,
-        tags: ['FastFood', 'salads'],
+        tags: ['fastfood', 'salads'],
         imageUrl: '/assets/food-5.jpg',
         cookTime: '5-15',
         description: ['South-Africa'],
@@ -75,7 +89,7 @@ export class FoodService {
         name: 'mochino drink',
         favourite: false,
         star: 4,
-        tags: ['FastFood', 'drinks'],
+        tags: ['drinks'],
         imageUrl: '/assets/food-6.jpg',
         cookTime: '5',
         description: ['South-Africa'],
@@ -86,7 +100,7 @@ export class FoodService {
         name: 'fish & chips',
         favourite: true,
         star: 3,
-        tags: ['FastFood', 'fish', 'chips'],
+        tags: ['fish', 'chips'],
         imageUrl: '/assets/food-7.jpg',
         cookTime: '15-20',
         description: ['South-Africa'],
@@ -97,7 +111,7 @@ export class FoodService {
         name: 'beef & cheese',
         favourite: false,
         star: 2,
-        tags: ['FastFood', 'burger'],
+        tags: ['burger'],
         imageUrl: '/assets/food-8.jpg',
         cookTime: '20-30',
         description: ['Brazil'],
@@ -108,7 +122,7 @@ export class FoodService {
         name: 'eggs and cheese',
         favourite: true,
         star: 1,
-        tags: ['FastFood', 'fatty'],
+        tags: ['fastfood', 'fatty'],
         imageUrl: '/assets/food-9.jpg',
         cookTime: '5-15',
         description: ['Spain'],
@@ -119,7 +133,7 @@ export class FoodService {
         name: 'double-cheese Burger',
         favourite: false,
         star: 5,
-        tags: ['FastFood', 'burger'],
+        tags: ['fastfood', 'burger'],
         imageUrl: '/assets/food-10.jpg',
         cookTime: '15-30',
         description: ['South-Africa'],
@@ -131,7 +145,7 @@ export class FoodService {
         name: 'burgerStrips',
         favourite: false,
         star: 5,
-        tags: ['FastFood', 'burger'],
+        tags: ['fastfood', 'burger'],
         imageUrl: '/assets/food-11.jpg',
         cookTime: '15-30',
         description: ['Italy'],
@@ -164,7 +178,7 @@ export class FoodService {
         name: 'family-meal',
         favourite: false,
         star: 5,
-        tags: ['FastFood', 'salad', 'Wraps'],
+        tags: ['fastfood', 'salad', 'wraps'],
         imageUrl: '/assets/food-14.jpg',
         cookTime: '20-40',
         description: ['South-Africa'],
@@ -197,7 +211,7 @@ export class FoodService {
         name: 'fish - chips',
         favourite: true,
         star: 5,
-        tags: ['FastFood', 'fish', 'chips'],
+        tags: ['fastfood', 'fish', 'chips'],
         imageUrl: '/assets/food-17.png',
         cookTime: '15-20',
         description: ['South-Africa']
@@ -208,7 +222,7 @@ export class FoodService {
         name: 'fish-meal',
         favourite: false,
         star: 4,
-        tags: ['FastFood', 'fish', 'chips'],
+        tags: ['fastfood', 'fish', 'chips'],
         imageUrl: '/assets/food-18.jpg',
         cookTime: '20-30',
         description: ['Brazil'],
