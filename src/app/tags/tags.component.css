@@ -3,3 +3,12 @@ div{
     flex-wrap: wrap;
     justify-content: center;
 }
+
+div a{
+    background-color: #afaaaa;
+    padding: .3rem 1rem;
+    margin: .2rem .15rem;
+    border-radius: 10rem;
+    color: blue;
+    font-weight:600 ;
+}
