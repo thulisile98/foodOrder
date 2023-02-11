@@ -1,3 +1,4 @@
+import { FoodpageComponent } from './foodpage/foodpage.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'tag/:tag',
     component: HomeComponent,
+  },
+  {
+    path: 'food/:Id',
+    component: FoodpageComponent,
   }
 ];
 
