@@ -8,7 +8,7 @@ import { Tag } from '../shared/models/Tag';
   styleUrls: ['./tags.component.css']
 })
 export class TagsComponent {
-
+  foodPagetags?: string[];
   tags: Tag[] = [];
   constructor(private fs: FoodService) { }
 
