@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
 
 const routes: Routes = [
 
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'food/:Id',
     component: FoodpageComponent,
+  },
+  {
+    path: 'cart-page',
+    component: CartPageComponent,
   }
 ];
 
