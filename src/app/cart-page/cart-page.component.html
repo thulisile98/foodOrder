@@ -1,3 +1,4 @@
+<div class="container">
 <ul>
     <li *ngFor="let cartItem of cart.items">
         <div>
@@ -22,11 +23,13 @@
             {{cartItem.food.price |currency:'EUR':true}}
        
      </div>
+
      <div class="remove-cartbutton">
         <button (click)="removeFromCart(cartItem)">
-        Remove
+        remove
         </button>
      </div>
+
  </div>
 </li>
 </ul>
@@ -37,4 +40,6 @@
     <div class="total-price">
         {{cart.totalPrice |currency:'EUR':true}}
     </div>
+    <a class="checkoutLink" routerLink="/checkout">Checkout</a>
+</div>
 </div>

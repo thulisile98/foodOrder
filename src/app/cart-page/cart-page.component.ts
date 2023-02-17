@@ -2,6 +2,7 @@ import { CartService } from './../services/cart.service';
 import { CartItem } from './../shared/models/CartItem';
 import { Cart } from './../shared/models/Cart';
 import { Component } from '@angular/core';
+import { FoodService } from '../services/food/food.service';
 
 
 
@@ -12,7 +13,11 @@ import { Component } from '@angular/core';
 })
 export class CartPageComponent {
   cart!: Cart;
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService, private foodService: FoodService) {
+    let foods = foodService.getAll();
+    cartService.addToCart(foods[1]);
+    cartService.addToCart(foods[3]);
+    cartService.addToCart(foods[5]);
     this.setCart();
   }
   ngOnInit(): void {

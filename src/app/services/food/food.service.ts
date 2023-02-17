@@ -212,10 +212,10 @@ export class FoodService {
       {
         id: 17,
         price: 12,
-        name: 'fish - chips',
+        name: 'fish & greens',
         favourite: true,
         star: 5,
-        tags: ['fastfood', 'fish', 'chips'],
+        tags: ['fastfood', 'fish', 'salad'],
         imageUrl: '/assets/food-17.png',
         cookTime: '15-20',
         description: ['South-Africa']
@@ -223,10 +223,10 @@ export class FoodService {
       {
         id: 18,
         price: 12,
-        name: 'fish-meal',
+        name: 'full chicken',
         favourite: false,
         star: 4,
-        tags: ['fastfood', 'fish', 'chips'],
+        tags: ['fastfood', 'chicken'],
         imageUrl: '/assets/food-18.jpg',
         cookTime: '20-30',
         description: ['Brazil'],
