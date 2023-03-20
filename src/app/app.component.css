@@ -20,3 +20,9 @@ a.logo{
     font-family: bold;
     
 }
+
+.bi{
+    width: 2rem;
+    height: 1rem;
+    color: #e72929;
+}
