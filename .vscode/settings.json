@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/0520e1dd-2d6a-4bf6-9cbb-db0c34f53515/resourceGroups/resourceGroup1/providers/Microsoft.Web/sites/foodO",
+    "appService.deploySubpath": "dist"
+}

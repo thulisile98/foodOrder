@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RatingModule } from 'ng-starrating';
 
@@ -12,6 +12,7 @@ import { SearchComponent } from './search/search.component';
 import { TagsComponent } from './tags/tags.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { FoodpageComponent } from './foodpage/foodpage.component';
+import { LoginComponent } from './login/login/login.component';
 
 
 
@@ -23,13 +24,15 @@ import { FoodpageComponent } from './foodpage/foodpage.component';
     SearchComponent,
     TagsComponent,
     CartPageComponent,
-    FoodpageComponent
+    FoodpageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RatingModule,
     FormsModule,
+    ReactiveFormsModule,
 
   ],
   providers: [],

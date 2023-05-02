@@ -26,3 +26,6 @@ a.logo{
     height: 1rem;
     color: #e72929;
 }
+nav ul li.login {
+  margin-left: auto;
+}
