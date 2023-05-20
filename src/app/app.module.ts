@@ -13,6 +13,7 @@ import { TagsComponent } from './tags/tags.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { FoodpageComponent } from './foodpage/foodpage.component';
 import { LoginComponent } from './login/login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -25,7 +26,8 @@ import { LoginComponent } from './login/login/login.component';
     TagsComponent,
     CartPageComponent,
     FoodpageComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
