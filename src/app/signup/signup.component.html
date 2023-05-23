@@ -9,7 +9,7 @@
                     </div>
 
                     <div class="panel-body">
-                        <form [formGroup]="signUpForm">
+                        <form [formGroup]="signUpForm" (ngSubmit)="saveData()">
                             <div class="form-group pt-3">
                                 <div class="input-field" [class.error]="signUpForm.controls['firstname'].touched && signUpForm.hasError('required','firstname')">
                                     <span class="fa fa-user p-2"> </span>
@@ -51,7 +51,7 @@
                             </div>
                             <small *ngIf="signUpForm.controls['password'].touched && signUpForm.hasError('required','password')"  class="text-danger">*password is required</small>
                            
-                            <button (click)=" onSubmit()"  type="submit" class="btn btn-primary btn-block mt-4 w-100">Sign up</button>
+                            <button (click)="onSubmit()"  type="submit" class="btn btn-primary btn-block mt-4 w-100">Sign up</button>
                             <div class="text-centre pt-4 text-muted">Already have account? <a id="forget"
                                     routerLink="/login">Login</a></div>
                         </form>

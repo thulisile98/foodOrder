@@ -9,15 +9,15 @@
                     </div>
 
                     <div class="panel-body">
-                    <form [formGroup]="loginForm">
+                    <form [formGroup]="loginForm" (ngSubmit)="logIn()">        
                 <div class="form-group pt-3">
-                 <div class="input-field" [class.error]="loginForm.controls['username'].touched && loginForm.hasError('required','username')" >
+                 <div class="input-field" [class.error]="loginForm.controls['email'].touched && loginForm.hasError('required','email')" >
                     <span class="fa fa-user p-2"> </span>
-                     <input formControlName="username" type="text" placeholder="username" id="username"> 
+                     <input formControlName="email" type="text" placeholder="email" id="email"> 
                  </div>
              </div>
 
-                <small *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')"  class="text-danger" >*username required</small>
+                <small *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')"  class="text-danger" >*email required</small>
 
           <div class="form-group pt-3">
                  <div class="input-field" [class.error]="loginForm.controls['password'].touched && loginForm.hasError('required','password')">

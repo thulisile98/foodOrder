@@ -14,6 +14,11 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 import { FoodpageComponent } from './foodpage/foodpage.component';
 import { LoginComponent } from './login/login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
+
+
 
 
 
@@ -35,7 +40,8 @@ import { SignupComponent } from './signup/signup.component';
     RatingModule,
     FormsModule,
     ReactiveFormsModule,
-
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent]

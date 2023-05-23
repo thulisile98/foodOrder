@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import validateForm from 'src/app/helpers/validateform';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Firestore, collection, addDoc } from '@angular/fire/firestore';
+import { doc, getDoc, } from "firebase/firestore";
 
 @Component({
   selector: 'app-login',
@@ -13,12 +15,12 @@ export class LoginComponent {
   eyeIcon: string = "fa-eye-slash";
   loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private firestore: Firestore) {
   }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required]
     })
 
@@ -30,9 +32,23 @@ export class LoginComponent {
     this.isText ? this.type = "text" : this.type = "password";
   }
 
+  async logIn() {
+    const userData = { ...this.loginForm.value };
+    const docRef = doc(this.firestore, 'users', userData.email);
+    const docSnap = await getDoc(docRef);
+
+    console.log(docSnap);
+
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+    } else {
+
+      console.log("User dont exits Register Account");
+    }
+  }
   onSubmit() {
     if (this.loginForm.valid) {
-      // send
+      this.logIn();
     } else {
       validateForm.validateAllFormFields(this.loginForm)
       alert("invalid user input");

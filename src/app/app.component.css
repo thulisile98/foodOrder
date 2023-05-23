@@ -1,31 +1,41 @@
-header{
-
+header {
     background-color: white;
     padding: 0%;
     border-bottom: 1px solid #e72929;
 }
 
-a{
+a {
     color: red;
 }
 
-a:hover{
+a:hover {
     background-color: rgb(255, 81, 0);
 }
-.container{
+
+.container {
     margin: 0 auto;
     display: flex;
 }
-a.logo{
+
+a.logo {
     font-family: bold;
-    
 }
 
-.bi{
+.bi {
     width: 2rem;
     height: 1rem;
     color: #e72929;
 }
-nav ul li.login {
-  margin-left: auto;
+
+.navbar-brand {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    margin-left: auto;
+}
+
+nav ul li {
+    margin-left: 20px;
 }
