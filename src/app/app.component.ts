@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { Firestore } from 'firebase/firestore';
+import { UserService } from './services/user.service';
 
 
 @Component({
@@ -8,4 +11,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'foodOrder';
+  username: string = '';
+
+  constructor(public userservice: UserService) { }
+
+
+
 }

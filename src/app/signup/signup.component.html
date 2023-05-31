@@ -63,3 +63,15 @@
     </div>
 </div>
 
+<!-- //get user data -->
+<ul>
+    <li *ngFor="let data of userData | async ">
+
+        {{data.email}}
+         {{data.username}}
+          {{data.password}}
+           {{data.firstname}}
+        <button (click)="updateData(data.email)">Edit</button>
+         <button (click)="deleteData(data.email)">Delete</button>
+    </li>
+</ul>

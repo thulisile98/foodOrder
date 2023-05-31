@@ -96,7 +96,7 @@ export class FoodService {
         tags: ['drinks'],
         imageUrl: '/assets/food-6.jpg',
         cookTime: '5',
-        description: ['South-Africa'],
+        description: ['cocktail drink with fruits'],
       },
       {
         id: 7,

@@ -12,20 +12,19 @@ import { FoodService } from '../services/food/food.service';
   styleUrls: ['./cart-page.component.css']
 })
 export class CartPageComponent {
-  cart!: Cart;
-  constructor(private cartService: CartService, private foodService: FoodService) {
-    let foods = foodService.getAll();
-    cartService.addToCart(foods[1]);
-    cartService.addToCart(foods[3]);
-    cartService.addToCart(foods[5]);
-    this.setCart();
+  items!: CartItem[];
+  constructor(public cartService: CartService, private foodService: FoodService) {
+
+
   }
   ngOnInit(): void {
-
+    let foods = this.foodService.getAll();
+    this.setCart();
+    this.cartService.getTotalPrice()
   }
 
   setCart() {
-    this.cart = this.cartService.getCart();
+    this.items = this.cartService.items;
   }
 
   removeFromCart(CartItem: CartItem) {
@@ -34,10 +33,24 @@ export class CartPageComponent {
 
   }
 
-  changeQuantity(CartItem: CartItem, quantityInString: string) {
-    const quantity = parseInt(quantityInString);
-    this.cartService.changeQuantity(CartItem.food.id, quantity);
-    this.setCart();
+  public changeQuantity(event: any, cartItem: any) {
+    const newQuantity = parseInt(event.target.value, 10);
+    cartItem.quantity = newQuantity;
+    cartItem.subTotal = cartItem.food.price * newQuantity;
+    this.cartService.totalPrice = this.calculateTotalPrice();
+    console.log(this.items.length + (newQuantity - 1));
+
   }
+
+  calculateTotalPrice() {
+    let totalPrice = 0;
+    for (const cartItem of this.items) {
+      totalPrice += cartItem.subTotal;
+
+    }
+    return totalPrice;
+  }
+
+
 
 }

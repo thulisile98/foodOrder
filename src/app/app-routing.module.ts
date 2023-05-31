@@ -7,6 +7,7 @@ import { SearchComponent } from './search/search.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { LoginComponent } from './login/login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
 
@@ -37,7 +38,15 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent,
+  },
+
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
+
   }
+
+
 
 ];
 

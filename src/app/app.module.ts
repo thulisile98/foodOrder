@@ -14,11 +14,11 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 import { FoodpageComponent } from './foodpage/foodpage.component';
 import { LoginComponent } from './login/login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
-
-
+import { CheckoutComponent } from './checkout/checkout.component';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+// import { getStorage, provideStorage } from '@angular/fire/storage';
 
 
 
@@ -32,7 +32,8 @@ import { environment } from 'src/environments/environment';
     CartPageComponent,
     FoodpageComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -42,8 +43,12 @@ import { environment } from 'src/environments/environment';
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}

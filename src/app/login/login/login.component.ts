@@ -1,8 +1,11 @@
+import { UserService } from './../../services/user.service';
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import validateForm from 'src/app/helpers/validateform';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Firestore, collection, addDoc } from '@angular/fire/firestore';
 import { doc, getDoc, } from "firebase/firestore";
+
 
 @Component({
   selector: 'app-login',
@@ -14,8 +17,9 @@ export class LoginComponent {
   isText: boolean = false;
   eyeIcon: string = "fa-eye-slash";
   loginForm!: FormGroup;
+  isLoggedIn: boolean = false;
 
-  constructor(private fb: FormBuilder, private firestore: Firestore) {
+  constructor(private fb: FormBuilder, private firestore: Firestore, private router: Router, public userservice: UserService) {
   }
 
   ngOnInit(): void {
@@ -41,6 +45,10 @@ export class LoginComponent {
 
     if (docSnap.exists()) {
       console.log("Document data:", docSnap.data());
+      this.router.navigateByUrl('');
+      this.userservice.isLoggedIn = true;
+      this.userservice.username = docSnap.get('username');
+
     } else {
 
       console.log("User dont exits Register Account");

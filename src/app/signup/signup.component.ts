@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import validateForm from 'src/app/helpers/validateform';
-import { Firestore, collection, addDoc } from '@angular/fire/firestore';
-import { doc, setDoc } from "firebase/firestore";
+import { Firestore, collection, addDoc, collectionData } from '@angular/fire/firestore';
+import { deleteDoc, doc, setDoc, updateDoc, } from "firebase/firestore";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-signup',
@@ -10,16 +11,15 @@ import { doc, setDoc } from "firebase/firestore";
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
-
-
   type: string = "password";
-
   isText: boolean = false;
   eyeIcon: string = "fa-eye-slash";
   signUpForm!: FormGroup;
+  userData!: Observable<any>;
 
   constructor(private fb: FormBuilder, private firestore: Firestore) {
     this.firestore = firestore;
+    this.getData();
   }
 
   ngOnInit(): void {
@@ -55,9 +55,46 @@ export class SignupComponent {
   onSubmit(): void {
     if (this.signUpForm.valid) {
       this.saveData();
+      alert("Succesfully Registered");
     } else {
       validateForm.validateAllFormFields(this.signUpForm);
       alert("Invalid user input");
     }
+  }
+
+  getData() {
+    const collectionInstance = collection(this.firestore, 'users');
+    collectionData(collectionInstance).subscribe(val => {
+      console.log(val);
+    })
+    this.userData = collectionData(collectionInstance, { idField: 'email' });
+  }
+
+  updateData(email: string) {
+    const docInstance = doc(this.firestore, 'users', email);
+    const updateData = {
+      username: 'updatedname',
+      email: 'updatedname',
+      firstname: 'updatedname',
+      password: 'updatedname',
+      lastname: 'updatedname',
+    }
+
+    updateDoc(docInstance, updateData)
+      .then(() => {
+        console.log('data updated');
+      })
+      .catch((error) => {
+        console.log('error');
+      })
+  }
+
+  deleteData(email: string) {
+    const docInstance = doc(this.firestore, 'users', email);
+    deleteDoc(docInstance)
+      .then(() => {
+        console.log('deleted data');
+      })
+
   }
 }

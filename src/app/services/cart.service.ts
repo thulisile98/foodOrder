@@ -7,25 +7,32 @@ import { Cart } from '../shared/models/Cart';
   providedIn: 'root'
 })
 export class CartService {
+  items: CartItem[] = [];
+  totalPrice: number = 0;
 
-  private cart: Cart = new Cart();
   addToCart(food: Foods): void {
-    let cartItem = this.cart.items.find(item => item.food.id == food.id)
+    let cartItem = this.items.find(item => item.food.id == food.id)
     if (cartItem) {
       this.changeQuantity(food.id, cartItem.quantity + 1);
       return;
     }
-    this.cart.items.push(new CartItem(food))
+    this.items.push(new CartItem(food, 1));
   }
+
   removeFromCart(foodId: number): void {
-    this.cart.items = this.cart.items.filter(item => item.food.id! - foodId)
+    this.items = this.items.filter(item => item.food.id! - foodId)
   }
+
   changeQuantity(quantity: number, foodId: number) {
-    let CartItem = this.cart.items.find(item => item.food.id === foodId);
+    let CartItem = this.items.find(item => item.food.id === foodId);
     if (!CartItem) return;
     CartItem.quantity = quantity;
   }
-  getCart(): Cart {
-    return this.cart;
+
+  getTotalPrice() {
+    this.totalPrice = this.items.map(item => item.subTotal).reduce((prevValue, currValue) => prevValue + currValue);
+    return this.totalPrice;
   }
+
+
 }

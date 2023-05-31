@@ -7,7 +7,8 @@ export const environment = {
         storageBucket: "food-1d7bf.appspot.com",
         messagingSenderId: "156795665592",
         appId: "1:156795665592:web:03d116fc643298225f084d",
-        measurementId: "G-NW5XGG0XHZ"
+        measurementId: "G-NW5XGG0XHZ",
+
     },
     production: false
 }

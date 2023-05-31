@@ -4,6 +4,7 @@ header {
     border-bottom: 1px solid #e72929;
 }
 
+
 a {
     color: red;
 }
@@ -33,9 +34,19 @@ a.logo {
 }
 
 nav ul {
-    margin-left: auto;
+    margin-left: 60%
 }
 
 nav ul li {
+    
     margin-left: 20px;
+    font-family: bold;
+    text-decoration: none;
+    text-decoration-line: none;
+}
+
+.px-2 {
+    size: 1px;
+    box-sizing: border-box;
+    border-radius: 0%;
 }
