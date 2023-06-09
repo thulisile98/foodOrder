@@ -34,5 +34,13 @@ export class CartService {
     return this.totalPrice;
   }
 
+  calculateTotalPrice(): number {
+    let totalPrice = 0;
+    for (const cartItem of this.items) {
+      totalPrice += cartItem.subTotal;
+    }
+    return totalPrice;
+  }
+
 
 }

@@ -1,0 +1,54 @@
+.checkout-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.order-summary {
+  margin-bottom: 20px;
+}
+
+.order-summary h3 {
+  margin-bottom: 10px;
+}
+
+.order-summary ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.billing-details {
+  width: 400px;
+}
+
+.billing-details h3 {
+  margin-bottom: 10px;
+}
+
+.billing-details form {
+  display: flex;
+  flex-direction: column;
+}
+
+.billing-details label {
+  margin-bottom: 5px;
+}
+
+.billing-details input,
+.billing-details textarea {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.billing-details button {
+  padding: 10px;
+  background-color: hsl(0, 80%, 33%);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.billing-details button:hover {
+  background-color: #45a049;
+}

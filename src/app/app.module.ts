@@ -18,6 +18,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { OrderComponent } from './order/order.component';
 // import { getStorage, provideStorage } from '@angular/fire/storage';
 
 
@@ -33,7 +34,8 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
     FoodpageComponent,
     LoginComponent,
     SignupComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

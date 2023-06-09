@@ -2,30 +2,40 @@
 <app-search></app-search>
 <app-tags></app-tags>
 <ul>
-    <li *ngFor="let food of foods">
-        <a  routerLink="/food/{{food.id}}">
-        <img src="{{food.imageUrl}}" alt="food images">
+    <li *ngFor="let item of itemsData| async">
+        <a  routerLink="/food/{{item.product_id}}">
+        <img [src]="item.imgUrl" alt="food images">
        
      <div class="content">
         <div class="name">
-            {{food.name}}
+            {{item.productName}}
         </div>
-        <span class="favourite {{food.favourite?'':'not'}}">♥</span>
-       <star-rating [value]="food.star" [totalstars]="5" 
+        <span class="favourite {{item.favourite?'':'not'}}">♥</span>
+       <star-rating [value]="item.star" [totalstars]="5" 
        checkedcolor="red"
        uncheckedcolor="black"
        size="24px"[readonly]="true"></star-rating>
        <div class="description">
-         {{food.description}}
+         {{item.productDesc}}
      </div>
      <div class="cooktime">🕐
-         {{food.cookTime}}
+         {{item.cooktime}}
         Mins
      </div>
      <div class="price">
-         {{food.price |currency:'EUR':true}}
+         {{item.price |currency:'EUR':true}}
      </div>
     </div>
      </a>
     </li>
 </ul>
+
+<!-- <ul>
+<li *ngFor="let items of itemData| async">
+   <div class="productName">
+     {{items.productName}}
+   </div>
+
+</li>
+
+</ul> -->
