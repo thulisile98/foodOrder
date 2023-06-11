@@ -8,6 +8,8 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 import { LoginComponent } from './login/login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { OrderComponent } from './order/order.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 const routes: Routes = [
 
@@ -30,8 +32,12 @@ const routes: Routes = [
   {
     path: 'cart-page',
     component: CartPageComponent,
-  }
-  , {
+  },
+  {
+    path: 'order',
+    component: OrderComponent,
+  },
+  {
     path: 'login',
     component: LoginComponent,
   },
@@ -44,7 +50,8 @@ const routes: Routes = [
     path: 'checkout',
     component: CheckoutComponent,
 
-  }
+  },
+  { path: 'search-results/:products', component: SearchResultsComponent },
 
 
 

@@ -1,6 +1,4 @@
-
 import { Component } from '@angular/core';
-import { FoodService } from '../services/food/food.service';
 import { CartService } from '../services/cart.service';
 import { CartItem } from '../shared/models/CartItem';
 import { Foods } from '../shared/food';

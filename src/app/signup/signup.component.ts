@@ -52,6 +52,7 @@ export class SignupComponent {
       alert('Invalid user input');
     }
   }
+
   onSubmit(): void {
     if (this.signUpForm.valid) {
       this.saveData();

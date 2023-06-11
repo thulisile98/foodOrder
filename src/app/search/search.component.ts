@@ -1,5 +1,7 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component } from '@angular/core';
+import { Firestore, collection, addDoc } from '@angular/fire/firestore';
+import { doc, getDoc, } from "firebase/firestore";
 
 @Component({
   selector: 'app-search',

@@ -19,6 +19,7 @@ import { environment } from 'src/environments/environment';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { OrderComponent } from './order/order.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 // import { getStorage, provideStorage } from '@angular/fire/storage';
 
 
@@ -35,7 +36,8 @@ import { OrderComponent } from './order/order.component';
     LoginComponent,
     SignupComponent,
     CheckoutComponent,
-    OrderComponent
+    OrderComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
