@@ -6,7 +6,6 @@
     <li *ngFor="let cartItem of items">
       <div>
         <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name">
-        {{cartItem}}
       </div>
       <div>
         <a routerLink="/food/{{cartItem.food.id}}">
@@ -21,14 +20,9 @@
           <div class="price">
           {{cartItem.subTotal | currency:'EUR':true}}
         </div>
+
       </div>
     </li>
   </ul>
-  
-  <div  class="checkout">
-    <div class="food-count">
-      {{items.length}}
-    </div>
-  </div>
 </div>
 
